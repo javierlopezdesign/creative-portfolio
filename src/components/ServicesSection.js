@@ -6,67 +6,87 @@ import diaphragm from "../img/diaphragm.svg";
 import money from "../img/money.svg";
 import teamwork from "../img/teamwork.svg";
 
+import { StyledAbout, StyledDescription, StyledHide, StyledImg } from "../styles";
+import styled from "styled-components";
+
 
 const AboutSection = () => {
     return(
-        <div className="services">
-            <div className="description">
+        <StyledServices>
+            <StyledDescription>
                 <h2>High <span>quality</span> services</h2>
-                <div className="cards">
+                <StyledCards>
                     
-                    <div className="card">
+                    <StyledCard>
                         <div className="icon">
                             <img src={clock} alt="Clock" />
                             <h3>Efficience</h3>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div className="card">
+                    </StyledCard>
+                    <StyledCard>
                         <div className="icon">
                             <img src={diaphragm} alt="Diaphragm" />
                             <h3>Diaphragm</h3>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div className="card">
+                    </StyledCard>
+                    <StyledCard>
                         <div className="icon">
                             <img src={money} alt="money" />
                             <h3>Affordable</h3>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div className="card">
+                    </StyledCard>
+                    <StyledCard>
                         <div className="icon">
                             <img src={teamwork} alt="Teamwork" />
                             <h3>Teamwork</h3>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-                <img src={home2} alt="Camera" />
-            </div>
-
-
-            {/* <div className="title">
-                <div className="hide">
-                    <h1>We work to make</h1>
-                </div>
-                <div className="hide">
-                    <h1>your <span>dreams</span> come</h1>
-                </div>
-                <div className="hide">
-                    <h1>true</h1>
-                </div>
-                <p>Contact us for any photography ideas you have, we will make it happens.</p>
-                <button>Contact Us!</button>
-
-            </div>
-            <img src={home1} alt="Professional cameraman" /> */}
-        </div>
+                    </StyledCard>
+                </StyledCards>
+            </StyledDescription>
+            <StyledImg>
+            <img src={home2} alt="Camera" />
+            </StyledImg>
+        </StyledServices>
 
 
     )
+};
 
-}
+const StyledServices = styled(StyledAbout)`
+    h2{
+        font-weight: 500
+        padding-bottom:3rem;
+    }
+    p{
+        width: 70%;
+        padding: 2rem 0 4rem 0;
+    }
+
+`;
+const StyledCards = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+
+
+`;
+
+const StyledCard = styled.div`
+    flex-basis: 20rem;
+    .icon{
+        display: flex;
+        align-items: center;
+        img{
+            width: 40px;
+        }
+        h3{
+            padding-left: 1rem
+        }
+    }
+
+`;
 
 export default AboutSection;
